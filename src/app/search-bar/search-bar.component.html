@@ -1,0 +1,155 @@
+<div class="container" id="home">
+  <div class="card2">
+    <form class="form-inline">
+      <input type="text" class="form-control mr-10" placeholder="Search" name="name" [(ngModel)]="name">
+      <button type="submit" class="btn btn-dark" (click)="searchUser(name)">Search</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-6 img">
+      <img src="{{user.avatar_url}}" class="img-fluid z-depth-1-half rounded-circle" style="height:400px; width:400px;">
+    </div>
+    <div class="card1 col-6 rounded">
+
+      <div class="card-body">
+
+
+        <h4 class="card-title animated fadeInRight">
+          <p> User: {{user.login}}</p>
+        </h4>
+        <div *ngIf="loading">
+          <h3>loading <i class="fas fa-spinner animated rotateIn infinite "></i></h3>
+        </div>
+        <hr>
+
+        <ul class=" card-text list-group list-group-flush">
+          <li class="list-group-item animated fadeInRight"> <i class="fa fa-user-friends"></i> Followers:
+            {{user.followers}}</li>
+
+          <li class="list-group-item animated fadeInRight"> <i class="fa fa-users f0c0"></i> Following:
+            {{user.following}}</li>
+
+          <li class="list-group-item animated fadeInRight"> <i class="fa fa-folder-open"></i> Repos:
+            {{user.public_repos}}</li>
+
+          <li class="list-group-item animated fadeInRight"> <i class="fa fa-clock pr-1"></i> Joined on:
+            {{user.created_at|date}}</li>
+        </ul>
+      </div>
+
+      <div class="rounded-bottom lighten-3 text-center pt-3">
+        <ul class="list-unstyled list-inline font-small">
+
+          <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-user-friends"></i>
+              {{user.followers}}</a></li>
+
+          <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fa fa-users f0c0"></i>
+              {{user.following}}</a></li>
+
+          <li class="list-inline-item"><a href="#" class="white-text"><i class="fa fa-clock pr-1"></i>
+              {{user.created_at|date}}</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <hr class="my-4">
+  <section>
+
+    <h3 class="h3 text-center  text-info animated fadeInRight">Repositories</h3>
+    <div class="row wow fadeIn card-columns">
+      <div class="col-md-4 card" *ngFor="let repo of repos;">
+        <div class="card-body ">
+          <h4 class="card-title animated fadeInRight">
+            <p class="" appHighlight> {{repo.name}}</p>
+          </h4>
+          <hr>
+          <ul class=" card-text list-group list-group-flush">
+            <li class="list-group-item animated fadeInRight"> <i class="fas fa-fingerprint"></i> Repo ID: {{repo.id}}
+            </li>
+
+            <li class="list-group-item animated fadeInRight"> <i class="fas fa-clipboard"></i> Repo Name:
+              {{repo.name}}</li>
+
+            <li class="list-group-item animated fadeInRight"> <i class="fas fa-file-signature"></i> Repo Description:
+              {{repo.description}}</li>
+          </ul>
+        </div>
+        <div class="rounded-bottom lighten-3 text-center pt-3">
+          <ul class="list-unstyled list-inline font-small">
+            <a target="_blank" href="{{repo.html_url}}" class="btn btn-dark "> Checkout Github
+              <i class="fas fa-fighter-jet"></i>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <div class="pt-4 scroll-to-top">
+      <a class="btn btn-dark" href="#home" role="button">Scroll to Top
+        <i class="fa fa-arrow-up"></i>
+      </a>
+      <a class="btn btn-dark" href="https://github.com/moharick" target="_blank" role="button">Visit on Github
+        <i class="fa fa-rocket"></i>
+      </a>
+    </div>
+
+
+    <!-- Social icons -->
+    <div class="icons">
+      <div class="pb-4">
+        <a href="https://www.facebook.com/" target="_blank">
+          <i class="fab fa-facebook-f mr-3"></i>
+        </a>
+
+        <a href="https://twitter.com/" target="_blank">
+          <i class="fab fa-twitter mr-3"></i>
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank">
+          <i class="fab fa-youtube mr-3"></i>
+        </a>
+
+        <a href="https://plus.google.com/" target="_blank">
+          <i class="fab fa-google-plus-g mr-3"></i>
+        </a>
+
+        <a href="https://dribbble.com/" target="_blank">
+          <i class="fab fa-dribbble mr-3"></i>
+        </a>
+
+        <a href="https://pinterest.com/" target="_blank">
+          <i class="fab fa-pinterest mr-3"></i>
+        </a>
+
+        <a href="https://github.com/" target="_blank">
+          <i class="fab fa-github mr-3"></i>
+        </a>
+
+        <a href="http://codepen.io/" target="_blank">
+          <i class="fab fa-codepen mr-3"></i>
+        </a>
+      </div>
+
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="#" target="_blank"> Moharick </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+
+</div>
