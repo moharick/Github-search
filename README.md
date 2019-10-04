@@ -1,5 +1,7 @@
 # GithubSearch
 
+# [![BCH compliance](https://bettercodehub.com/edge/badge/moharick/Github-search?branch=master)](https://bettercodehub.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
 ## AUTHOR
